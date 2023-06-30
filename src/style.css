@@ -2,7 +2,7 @@
 
 body {
     margin: 0;
-    background-color: bisque;
+    background-color: rgb(38, 14, 66);
     color: white;
     font-family: 'Montserrat', sans-serif;
     background-image: url(images/background3.png); 
@@ -35,14 +35,26 @@ body {
     font-weight: 700;
 }
 
+.unit-btn {
+    margin-top: -.9rem;
+    font-size: .7rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.unit-btn:hover{
+    color: rgb(185, 154, 214);
+}
+
 .condition {
     font-size: 1.2rem;
     font-weight: 400;
 }
 
 .condition-img {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     background: none;
 }
 
@@ -53,4 +65,21 @@ body {
     padding: 6px 12px;
     outline: none;
     border: none;
+    background: none;
+    border-bottom: 2px solid rgb(255, 255, 255)
+}
+
+input,
+::placeholder {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: .85rem;
+    font-weight: 700;
+}
+
+.weather-details {
+    display: flex;
+}
+
+.details-1 {
 }
