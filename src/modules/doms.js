@@ -20,6 +20,16 @@ const domFunctions = (() => {
         conditionImg.innerHTML = apiFunctions.getIcon(weatherData);
     }
 
+    const renderDetails = (weatherData, unit) => {
+        const feelsLikeText = document.querySelector('#feels-like-text');
+
+        if(unit === 'F'){
+            feelsLikeText.innerText = Math.round(weatherData.current.feelslike_f) + ' \u00B0' + unit;
+        } else {
+            feelsLikeText.innerText = Math.round(weatherData.current.feelslike_c) + ' \u00B0' + unit;
+        }
+    }
+
     const unitChange = (unit) => {
         const unitBtn = document.querySelector('.unit-btn');
         if(unit === 'F') {
@@ -33,7 +43,7 @@ const domFunctions = (() => {
         apiFunctions.getWeatherData(oldCityName, unit);
     }
 
-    return { renderCurrent, unitChange }
+    return { renderCurrent, unitChange, renderDetails }
 })();
 
 export default domFunctions;

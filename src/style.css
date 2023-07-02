@@ -15,7 +15,6 @@ body {
 .weather-top {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     padding: 4vw;
 }
 
@@ -81,5 +80,37 @@ input,
     display: flex;
 }
 
-.details-1 {
+.details-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
+}
+
+.detail {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.detail-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50px;
+}
+
+.detail-svg {
+    height: 50px;
+    width: 50px;
+}
+
+.detail-title {
+    font-size: .85rem;
+    font-weight: 600;
+}
+
+.detail-text {
+    font-size: 1.8rem;
+    font-weight: 800;
 }
