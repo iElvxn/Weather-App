@@ -4,13 +4,13 @@ const apiFunctions = (() => {
 
     async function getWeatherData(cityName, unit) {
         try {
-            let url = 'https://api.weatherapi.com/v1/forecast.json?key=9dc871fe45fb412ab3d165658232906&q=' + cityName;
+            let url = 'https://api.weatherapi.com/v1/forecast.json?key=9dc871fe45fb412ab3d165658232906&q=' + cityName + '&aqi=yes';
             const response = await fetch(url, {mode: 'cors'})
             const cityData = await response.json();
-
+            const hour = cityData.location.localtime.slice(11,12); 
 
             domFunctions.renderCurrent(cityData, unit);
-            domFunctions.renderDetails(cityData, unit);
+            domFunctions.renderDetails(cityData, unit, hour);
 
         } catch(error) {
             console.log("Enter a valid city name.")

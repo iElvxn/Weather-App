@@ -114,3 +114,16 @@ input,
     font-size: 1.8rem;
     font-weight: 800;
 }
+
+#air-quality-unit {
+    font-size: 1rem;
+    margin-top: auto;
+    padding-bottom: 7px;
+    height: 1rem;
+}
+
+.air-quality-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
