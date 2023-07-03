@@ -4,9 +4,12 @@ import domFunctions from './modules/doms';
 
 const searchBox = document.querySelector('.search-box');
 const unitBtn = document.querySelector('.unit-btn');
-let unit = 'F'
+const detailOneBtn = document.querySelector('#details-slide-btn1');
+const detailTwoBtn = document.querySelector('#details-slide-btn2');
 
-apiFunctions.getWeatherData('Tokyo', unit)
+let unit = 'F';
+
+apiFunctions.getWeatherData('Tokyo', unit);
 
 searchBox.addEventListener('keydown', async (e) => {
     if(e.key === 'Enter') {
@@ -19,11 +22,17 @@ searchBox.addEventListener('keydown', async (e) => {
 
 unitBtn.addEventListener('click', () => {
     if(unit === 'F'){
-        unit = 'C'
+        unit = 'C';
     } else {
-        unit = 'F'
+        unit = 'F';
     }
     domFunctions.unitChange(unit);
 });
 
+detailOneBtn.addEventListener('click', () => {
+    domFunctions.detailSlides(1);
+});
+detailTwoBtn.addEventListener('click', () => {
+    domFunctions.detailSlides(2);
+});
 
