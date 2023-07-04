@@ -2,15 +2,18 @@ import domFunctions from "./doms";
 
 const apiFunctions = (() => {
 
-    async function getWeatherData(cityName, unit) {
+    async function getWeatherData(cityName, unit, type) {
         try {
-            let url = 'https://api.weatherapi.com/v1/forecast.json?key=9dc871fe45fb412ab3d165658232906&q=' + cityName + '&aqi=yes';
+            let url = 'https://api.weatherapi.com/v1/forecast.json?key=9dc871fe45fb412ab3d165658232906&q=' + cityName + '&aqi=yes&days=7';
             const response = await fetch(url, {mode: 'cors'})
             const cityData = await response.json();
             const hour = cityData.location.localtime.slice(11,12); 
 
             domFunctions.renderCurrent(cityData, unit);
             domFunctions.renderDetails(cityData, unit, hour);
+            domFunctions.renderForeCast(cityData, unit);
+
+            return cityData;
 
         } catch(error) {
             console.log("Enter a valid city name.")
@@ -18,8 +21,7 @@ const apiFunctions = (() => {
         }
     }
 
-    function getIcon(weatherData) {
-        const code = JSON.stringify(weatherData.current.condition.code);
+    function getIcon(weatherData, code) {
         const condition = document.querySelector('.condition').innerText;
         if (code === '1000') {
             if(condition === "Clear"){
