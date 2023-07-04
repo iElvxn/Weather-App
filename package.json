@@ -5,4 +5,9 @@
     "webpack": "^5.88.1",
     "webpack-cli": "^5.1.4"
   }
+
+  "scripts": {
+    "deploy-demo": "git push origin :gh-pages --prefix dist origin gh-pages"
+  }
 }
+
