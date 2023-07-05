@@ -327,7 +327,7 @@ input,
 
 }
 
-@media screen and (device-width <= 600px){
+@media screen and (device-width <= 900px){
     
     .current-weather {
         padding: 2rem;
