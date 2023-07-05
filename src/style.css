@@ -14,7 +14,6 @@ body {
     background-size: cover;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-between;
 }
 
@@ -328,7 +327,7 @@ input,
 
 }
 
-@media screen and (width <= 600px){
+@media screen and (device-width <= 600px){
     
     .current-weather {
         padding: 2rem;
