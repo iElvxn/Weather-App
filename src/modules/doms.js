@@ -216,7 +216,14 @@ const domFunctions = (() => {
 
             const cityDay = parseInt(forecastDay.dataset.day);
             const date = new Date(weatherData.forecast.forecastday[cityDay].date);
-            const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+
+            let dayNames = [];
+            if(window.screen.width >= 600) {
+                dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+            } else {
+                dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+            }
+
             const day = dayNames[date.getDay()];
             title.innerText = day;
 
