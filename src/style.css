@@ -331,11 +331,10 @@ input,
     
     .current-weather {
         padding: 2rem;
-        height: 50vh - 2rem
     }
 
     .city-name {
-        font-size: 1.2rem;
+        font-size: 19.2px;
     }
     
     .temperature {
@@ -395,18 +394,18 @@ input,
     }
 
     .forecast-day {
-        width: calc((100vw - 2rem - 5*1rem)/7);
+        width: calc((100% - 2rem - 5*1rem)/7);
         gap: 7px;
     }
 
     .forecast-hr {
-        width: calc((100vw - 2rem - 7*1rem)/8);
+        width: calc((100% - 2rem - 7*1rem)/8);
         gap: 7px;
     }
 
     #forecast-slide-2,
     #forecast-slide-3{
-        margin-left: calc(-100vw + 2rem);
+        margin-left: calc(-100% + 2rem);
     }
 
     .hr-title,
