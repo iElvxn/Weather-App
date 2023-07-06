@@ -407,7 +407,7 @@ input,
 
     #forecast-slide-2,
     #forecast-slide-3{
-        margin-left: calc(-100% + 2rem);
+        margin-left: calc(-100vw + 2rem);
     }
 
     .hr-title,
